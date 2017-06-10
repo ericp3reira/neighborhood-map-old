@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Descubra o que há na sua vizinhança">
+    <meta name="author" content="Eric Pereira">
+    <title>Meu Bairro</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div id="main-map"></div>
+    <div id="main-menu">
+      <header>
+        <h1>Meu Bairro</h1>
+      </header>
+      <nav>
+        <ul>
+          <li>a</li>
+          <li>b</li>
+          <li>c</li>
+        </ul>
+      </nav>
+      <footer>
+        <p>por Eric Pereira</p>
+        <p>Powered by:</p>
+      </footer>
+    </div>
+
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('main-map'), {
+          center: {lat: -27.606164, lng: -48.627939},
+          zoom: 15
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_v08CEAxulWLORAG3IzjKICln6fg5tVA&callback=initMap"></script>
+  </body>
+</html>
