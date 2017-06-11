@@ -9,21 +9,22 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
+    <div id="open-menu-btn" data-bind="click: toggleMenu"></div>
     <div id="main-map"></div>
-    <div id="main-menu">
-      <header>
+    <div id="main-menu" data-bind="visible: isMenuOpen()">
+      <header class="header">
         <h1>Meu Bairro</h1>
+        <a href="#" id="close-menu-btn" data-bind="click: toggleMenu">X</a>
       </header>
-      <nav>
-        <ul>
-          <li>a</li>
-          <li>b</li>
-          <li>c</li>
-        </ul>
+      <nav class="nav">
+        <form class="">
+          <input type="text" name="cityName" value="">
+          <button type="button" name="searchButton">Procure</button>
+        </form>
       </nav>
       <footer>
         <p>por Eric Pereira</p>
-        <p>Powered by:</p>
+        <!-- <p>Powered by:</p> -->
       </footer>
     </div>
 
@@ -37,5 +38,7 @@
       }
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_v08CEAxulWLORAG3IzjKICln6fg5tVA&callback=initMap"></script>
+    <script src="js/vendor/knockout.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
