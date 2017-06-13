@@ -1,13 +1,18 @@
-(function() {
-  var mapViewModel = function() {
-    var self = this;
+var AppViewModel = function() {
+  var self = this;
 
-    self.isMenuOpen = ko.observable(false);
+  self.isMenuOpen = ko.observable(false);
 
-    self.toggleMenu = function() {
-      self.isMenuOpen(!isMenuOpen());
-    };
+  self.toggleMenu = function() {
+    self.isMenuOpen(!self.isMenuOpen());
   };
 
-  ko.applyBindings(mapViewModel);
-})();
+  self.address = ko.observable("");
+
+  self.setAddress = function() {
+    address = self.address();
+    self.address("");
+  };
+};
+
+ko.applyBindings(new AppViewModel());
