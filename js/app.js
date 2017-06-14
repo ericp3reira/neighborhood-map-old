@@ -7,10 +7,10 @@ var AppViewModel = function() {
     self.isMenuOpen(!self.isMenuOpen());
   };
 
-  self.address = ko.observable("");
+  self.address = ko.observable();
 
-  self.setAddress = function() {
-    address = self.address();
+  self.getAddress = function() {
+    setAddress(self.address());
     self.address("");
   };
 };

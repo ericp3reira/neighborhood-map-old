@@ -11,8 +11,8 @@
   <body>
     <header class="header">
       <button type="button" class="open-menu-btn" data-bind="click: toggleMenu"></button>
-      <form data-bind="submit: setAddress">
-        <input type="text" data-bind="value: address" placeholder="42 Wallaby Way, Sydney">
+      <form data-bind="submit: getAddress">
+        <input id="address-box" type="text" data-bind="value: address" placeholder="42 Wallaby Way, Sydney">
         <button type="submit" name="searchButton">Procure</button>
       </form>
     </header>
@@ -25,7 +25,7 @@
 
     <div id="main-map"></div>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_v08CEAxulWLORAG3IzjKICln6fg5tVA&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_v08CEAxulWLORAG3IzjKICln6fg5tVA&libraries=places&callback=initMap"></script>
     <script src="js/vendor/knockout.js"></script>
     <script src="js/maps.js"></script>
     <script src="js/app.js"></script>

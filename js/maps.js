@@ -1,9 +1,11 @@
 var map;
-var address = "";
+var geocoder;
+var address;
+var autocomplete;
 
 var initMap = function() {
   map = new google.maps.Map(document.getElementById('main-map'), {
-    zoom: 13,
+    zoom: 15,
   });
 
   if (navigator.geolocation) {
@@ -19,4 +21,24 @@ var initMap = function() {
   } else {
     console.log("Geolocation not available");
   }
+  initAutoComplete();
 };
+
+var setAddress = function(address) {
+  geocoder = new google.maps.Geocoder();
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === 'OK') {
+      map.setCenter(results[0].geometry.location);
+    } else {
+      console.log('Geocode not successful');
+    }
+  });
+};
+
+var initAutoComplete = function() {
+  var input = document.getElementById('address-box');
+  var autocompleteOptions = {
+    types: ['geocode'],
+  };
+  autocomplete = new google.maps.places.Autocomplete(input, autocompleteOptions);
+}
